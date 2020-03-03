@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Users Shown{% endblock %}
+
+{% block body %}
+<table class="border" width="100%" align="center">
+   <thead>
+   <tr>
+       <th>ID</th>
+       <th>Email</th>
+       <th>Roles</th>
+       <th>Password</th>
+   </tr>
+   </thead>
+   <tbody>
+   {% for user in users %}
+       <tr>
+           <td>{{ user.id }}</td>
+           <td>{{ user.email }}</td>
+           <td> {{ user.roles[0] }} </td>
+           <td>{{ user.password }}</td>
+       </tr>
+   {% endfor %}
+   </tbody>
+</table>
+{% endblock %}
